@@ -35,7 +35,7 @@ class MHA(nn.Module):
         logits = q @ k.transpose(-2, -1) * self.scale
         logits = logits.masked_fill(self.mask[:, :, :N, :N] == 0, -float('inf'))
         weights = F.softmax(logits, dim=-1)
-        out = (weights @ v).transpose(1, 2).contiguous().reshape(B, N, self.n_embd)
+        out = (weights @ v).transpose(1, 2).contiguous().view(B, N, self.n_embd)
         out = self.c_proj(out)
         return out
 #

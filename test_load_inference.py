@@ -1,5 +1,4 @@
 from my_gpt import GPT
-#from nano_gpt import GPT
 import torch
 import torch.nn.functional as F
 

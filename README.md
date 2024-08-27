@@ -1,0 +1,1 @@
+This is my reproduction of Karpathy's build-nanogpt. I basically just manually reimplement the model blocks part, and the forward logic. So, it doesn't contain any training or optimization etc.
